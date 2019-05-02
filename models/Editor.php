@@ -22,14 +22,15 @@ class Editor extends Model {
 		//$rez = ".cvcvcvcv  *Настя*   EDFFFFFFFFF.";
 		$rez = preg_replace('(\*(.*)\*)', '<i>$1</i>', $rez);
 
+		//вся строка, которая начинается с символа # помещается в тег <H1/>. При переходе на новую строку, тег H1 закрывается. Символ # удаляется из этой строки.
+		//$rez = ".cvcvcvcv  #Настя   EDFFFFFFFFF.";
+		$rez = preg_replace('(#(.*))', '<h1>$1</h1>', $rez);
+		$rez = preg_replace('~#(.*)[\\r\\n]~', '<h1>$1</h1>', $rez);
+
 //Перенос строки заменяется на <br>
 		$order    =  array("\r\n",  "\n",  "\r");
 		$replace  =  '<br>';
 		$rez  =  str_replace($order,  $replace,  $rez);
-
-		//вся строка, которая начинается с символа # помещается в тег <H1/>. При переходе на новую строку, тег H1 закрывается. Символ # удаляется из этой строки.
-		//$rez = ".cvcvcvcv  #Настя   EDFFFFFFFFF.";
-		$rez = preg_replace('(#(.*)$)', '<h1>$1</h1>', $rez);
 
 		//print_r($dan2);
 		//exit();

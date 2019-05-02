@@ -113,35 +113,23 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
-.editor {
-    flex-basis:50%;
-}
-.preview {
-    flex-basis:50%;
-}
 
 /*[contenteditable="true"]{display: inline-block;}*/
 div[contenteditable=true] > div {
     padding: 0;
 }
 
-
 #content {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: flex-start;
-}
-
-#editor{
-    min-width: 100%;
+   min-width: 100%;
+    min-height: 100%;
 }
 #editordiv, #preview {
-    order:1;
-    flex: 1 1 auto;
-    align-self: auto;
-    min-width: 0;
-    min-height: auto;
-    margin: 10px;
-   }
+    min-width: 50%;
+    float: left;
+    padding: 10px;
+}
+#editor{
+    display: block;
+    min-height: 300px;
+    min-width: 100%;
+}
